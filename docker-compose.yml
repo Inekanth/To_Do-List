@@ -13,16 +13,23 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb+srv://todolist:todo1234@cluster0.ginx2d5.mongodb.net/
+      - DB_HOST=127.0.0.1
+      - DB_USER=root
+      - DB_PASSWORD=abcd1234
+      - DB_NAME=todo_db
     depends_on:
-      - mongo
+      - db
 
-  mongo:
-    image: mongo:7.0
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: todo_db
     ports:
-      - "27017:27017"
+      - "3306:3306"
     volumes:
-      - mongo-data:/data/db
+      - mysql-data:/var/lib/mysql
 
 volumes:
-  mongo-data:
+  mysql-data:

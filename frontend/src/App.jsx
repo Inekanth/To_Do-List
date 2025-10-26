@@ -55,11 +55,11 @@ function App() {
       <div className="bg-white w-full max-w-6xl rounded-2xl shadow-lg p-10 flex gap-12">
         
         
-        <div className="w-1/3 border-r pr-10"> {/* Adjusted layout for clean separation */}
+        <div className="w-1/3 border-r pr-10"> /* Adjusted layout for clean separation */
            <h2 className="text-2xl font-bold mb-6 text-indigo-600">
            Add a Task</h2>
            
-            <form onSubmit={addTask} className="flex flex-col space-y-5"> {/* Increased space-y */}
+            <form onSubmit={addTask} className="flex flex-col space-y-5"> /* Increased space-y */
               
                <div>
                 <label htmlFor="task-title" className="block text-sm font-medium text-gray-700 mb-1">
