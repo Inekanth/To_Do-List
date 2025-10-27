@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   frontend:
     build: ./frontend
@@ -13,9 +11,9 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - DB_HOST=127.0.0.1
+      - DB_HOST=db
       - DB_USER=root
-      - DB_PASSWORD=abcd1234
+      - DB_PASSWORD=example
       - DB_NAME=todo_db
     depends_on:
       - db
